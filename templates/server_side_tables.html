@@ -1,0 +1,53 @@
+<table class = "table">
+    <thead>
+        <tr>
+          <th>txHash</th>
+          <th>Inputs</th>
+          <th>Outputs</th>
+        </tr>
+    </thead>
+    <tbody>
+      $for trans in context["eth_info"]:
+        <tr>
+          <td>
+            <a href = $trans["link"]> $trans["txHash"]</a>
+          </td>
+          <td>
+            $if trans["inputs"]:
+                $for _input in trans["inputs"]:
+                    $_input<br/>
+          </td>
+          <td>
+            $if trans["outputs"]:
+                $for _output in trans["outputs"]:
+                    $_output<br/>
+          </td>
+        </tr>
+      </tbody>
+</table>
+
+<table class = "table">
+      <thead>
+        <tr>
+          <th>txHash</th>
+          <th>Inputs</th>
+          <th>Outputs</th>
+        </tr>
+      </thead>
+      <tbody>
+      $for trans in context["btc_info"]:
+        <tr>
+          <td>
+            <a href = $trans["link"]> $trans["txHash"]</a>
+          </td>
+          <td>
+            $for _input in trans["inputs"]:
+                $_input<br/>
+          </td>
+          <td>
+            $for _output in trans["outputs"]:
+                $_output<br/>
+          </td>
+        </tr>
+      </tbody>
+</table>
