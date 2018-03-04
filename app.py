@@ -46,7 +46,7 @@ class BTC_RECENT_BIG_TRANS(object):
 class LIB(object):
     def GET(self,file):
         try:
-            f = open('./lib/' + file, 'r')
+            f = open('./scripts/' + file, 'r')
             return f.read()
         except:
             return messages.ERR_404
