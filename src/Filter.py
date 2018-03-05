@@ -53,9 +53,9 @@ class BitcoinFilter(object):
 
 
 #625000000000000000000
-
+#1000000000000000000
 class EthereumFilter(object):
-    def __init__(self, _handler = "ethereum", _track_amnt = 1000000000000000000):
+    def __init__(self, _handler = "ethereum", _track_amnt = 625000000000000000000):
         self.my_handler = handlers[_handler]()
         self.linkroot = "https://etherscan.io/tx/0x{tx}"
         self.track_amnt = _track_amnt
