@@ -6,20 +6,20 @@
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">  </head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/>
 
 <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
 </head>
 
-  <body>
-    <div class = "container">
-
+<body>
+<div class = "container">
+    <img src="https://imgur.com/download/Ya4y8w1">
     <h1>
-      Blockchain Summaries
+      Blockchain Filter
     </h1>
 
-  <div class = "card">
+  <div class = "tool">
     <h2>Ethereum Large Transactions from Last Block</h2>
     Price Tolerance (wei): <input class = "ethinput" type = "text" placeholder="625000000000000000000"><br/>
     <button class = "btn-lg btn-primary" onClick = "getLargeETH()">Eth Large Trans</button>
@@ -28,15 +28,15 @@
      src="https://cdn-images-1.medium.com/max/1600/1*9EBHIOzhE1XfMYoKz1JcsQ.gif">
   </div>
 
-  <div class = "card">
-   <div class = "card-text">
+  <div class = "tool">
+
     <h2>Bitcoin Large Transactions from Last Block</h2>
     Price Tolerance (satoshis): <input class = "btcinput" type = "text" placeholder="5000000000"><br/>
     <button class = "btn-lg btn-warning" onClick = "getLargeBTC()">BTC Large Trans</button>
     <div id = "btc-lg"></div>
     <img class = "loaderbtc" style = "display:none"
      src="https://cdn-images-1.medium.com/max/1600/1*9EBHIOzhE1XfMYoKz1JcsQ.gif">
-   </div>
+
   </div>
 </div>
 
@@ -44,6 +44,9 @@
 
 
   <style>
+      body {
+        padding-top: 100px;
+      }
 
       table {
            width: 1000px;
@@ -53,6 +56,9 @@
           width: 300px;
           height: 100px;
           overflow: scroll;
+      }
+      .tool {
+         margin: 100px;
       }
 
   </style>
