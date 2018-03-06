@@ -5,22 +5,24 @@ function processJSONToTable(json_string){
     json_pitch = JSON.parse(json_string);
     trans_list = json_pitch["response"];
 
-    var tbl = "<table>" +
-              "<th>Transaction Hash</th><th>Inputs</th><th>Outputs</th>"
+    var tbl = "<table class='table'>" +
+              "<tr><th scope='col'>Transaction Hash</th>\
+              <th scope='col'>Inputs</th>\
+              <th scope='col'>Outputs</th></tr>"
 
     var tbl_end = "</table>"
     innerString = ""
 
     for (var i = 0; i < trans_list.length; i++){
-      innerString += "<tr> <td> <a href='"+
+      innerString += "<tr > <td scope='col'> <a href='"+
       trans_list[i]["link"]+
       "'>" +
       trans_list[i]["txHash"] +
-      "</td> <td>" +
+      "</td> <td scope='col'><div class='cap-cell'>" +
       JSON.stringify(trans_list[i]["inputs"]) +
-      "</td> <td>" +
+      "</div></td> <td scope='col'><div class = 'cap-cell'>" +
       JSON.stringify(trans_list[i]["outputs"])+
-       "</td></tr>"
+       "</div></td></tr>"
     }
 
     final_tbl = tbl + innerString + tbl_end;
