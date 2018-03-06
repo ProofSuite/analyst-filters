@@ -19,21 +19,26 @@
       Blockchain Summaries
     </h1>
 
+  <div class = "card">
     <h2>Ethereum Large Transactions from Last Block</h2>
+    Price Tolerance (wei): <input class = "ethinput" type = "text" placeholder="625000000000000000000"><br/>
     <button class = "btn-lg" onClick = "getLargeETH()">Eth Large Trans</button>
     <div id = "eth-lg"></div>
     <img class = "loadereth" style = "display:none"
      src="https://cdn-images-1.medium.com/max/1600/1*9EBHIOzhE1XfMYoKz1JcsQ.gif">
+  </div>
 
-
-
+  <div class = "card">
+   <div class = "card-text">
     <h2>Bitcoin Large Transactions from Last Block</h2>
+    Price Tolerance (satoshis): <input class = "btcinput" type = "text" placeholder="5000000000"><br/>
     <button class = "btn-lg" onClick = "getLargeBTC()">BTC Large Trans</button>
     <div id = "btc-lg"></div>
     <img class = "loaderbtc" style = "display:none"
      src="https://cdn-images-1.medium.com/max/1600/1*9EBHIOzhE1XfMYoKz1JcsQ.gif">
-
-    </div>
+   </div>
+  </div>
+</div>
 
 </body>
 

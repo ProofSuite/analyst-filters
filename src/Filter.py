@@ -65,7 +65,9 @@ class EthereumFilter(object):
         for trans in _trans_list:
             trans_hash = trans["hash"]
             trans_value = int(trans["total"])
-            print trans_value
+
+            print "%s ::: %s" % (self.track_amnt,trans_value)
+            
             if trans_value >= self.track_amnt:
                 bigTrans.append({"inputs": trans.get("inputs"),
                                  "outputs" : trans.get("out"),

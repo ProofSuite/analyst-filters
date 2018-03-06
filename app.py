@@ -28,7 +28,14 @@ class ETH_RECENT_BIG_TRANS(object):
 
 
     def GET(self):
+        data = web.input()
+        tolerance = data.get("tolerance")
+        if tolerance: #TODO: Replace with settr
+            self.eth_filter.track_amnt = int(tolerance)
+
         eth_chain_info = self.eth_filter.getLargeTransactionsFromLatestBlock()
+
+
         return json.dumps({"response" : eth_chain_info})
 
 
@@ -39,7 +46,16 @@ class BTC_RECENT_BIG_TRANS(object):
         self.btc_filter = self.my_filters["bitcoin"]()
 
     def GET(self):
+        data = web.input()
+        tolerance = data.get("tolerance")
+        if tolerance: #TODO: Replace with settr
+            self.btc_filter.track_amnt = int(tolerance)
+
         btc_chain_info = self.btc_filter.getLargeTransactionsFromLatestBlock()
+
+
+
+
         return json.dumps({"response" : btc_chain_info})
 
 

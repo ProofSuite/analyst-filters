@@ -29,17 +29,31 @@ function processJSONToTable(json_string){
 }
 
 function getLargeBTC(){
+    var endpoint = "/btc_recent_big_trans";
+    var val = $(".btcinput").val()
+
+    if(typeof(val) != "undefined") {
+      endpoint += "?tolerance=" + String(val)
+    }
+
     $(".loaderbtc").show();
-    $.ajax({url:"/btc_recent_big_trans", success : function(result) {
+    $.ajax({url: endpoint, success : function(result) {
         var final_table = processJSONToTable(result);
         $("#btc-lg").html(String(final_table));
         $(".loaderbtc").hide();
 }})};
 
 function getLargeETH(){
+
+   var endpoint = "/eth_recent_big_trans";
+   var val = $(".ethinput").val()
+
+   if(typeof(val) != "undefined") {
+     endpoint += "?tolerance=" + String(val)
+   }
     $(".loadereth").show();
 
-    $.ajax({url:"/eth_recent_big_trans", success : function(result) {
+    $.ajax({url: endpoint, success : function(result) {
           var final_table = processJSONToTable(result);
           $("#eth-lg").html(String(final_table));
           $(".loadereth").hide();
